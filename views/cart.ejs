@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+
+
+<div class="container-cart" style="margin-top: 10%; padding: 5%;">
+  <a href="/products" style="float: left; margin-left: 2%; text-decoration: none;font-family: 'Quantico', sans-serif;">
+    < Back</a>
+      <img src=<%= image %> alt="" style="height: 200px; width: 200px;margin: 3%;margin-top: 5%; display: inline; float: left;">
+      <div class="col" style="display: inline-block; float: left; padding: 5%;">
+        <h4 class="product-title"> <%= title %></h4>
+        <p id="cost" style="font-family: 'Open Sans', sans-serif;"><b>Cost:</b> $ <%= price %> </p>
+        <p style="display: inline-block;font-family: 'Open Sans', sans-serif;"><b>Quantity:</b> </p>
+        <input type="text" id="text" value="1" style="display: inline-block; width: 50px;text-align:center"><button type="button" onclick="increase()" style="margin-left: 2%;ont-family: 'Quantico', sans-serif;" class="increment">+</button>
+        <p style="font-family: 'Open Sans', sans-serif;"><b>Category:</b> <%= category %></p>
+        <p style="font-family: 'Open Sans', sans-serif;"><b>Customer Reviews:</b> </p>
+
+        <% for(var i=0;i<Math.round(rating[0].rate);i++) { %>
+
+        <span class="fa fa-star checked" style="inline-block; float: left; color: red;"></span>
+
+        <% } %>
+        <p style="margin-left: 15% ;font-family: 'Open Sans', sans-serif;"><%= rating[0].rate %> out of 5</p>
+        <p style="font-size: 14px; font-family: 'Open Sans', sans-serif;"><%= rating[0].count %> Global rating</p>
+      </div>
+
+</div>
+
+
+<script>
+  function increase()
+  {
+    var a = 1;
+    var textBox = document.getElementById("text");
+    textBox.value++ ;
+    var multiply = document.getElementById("cost");
+    console.log(multiply.value);
+}
+</script>
+
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+
+
+<div class="row">
+
+<% for(var i=0;i<20;i++) { %>
+
+<div class="column">
+  <div class="wrap">
+
+    <div class="card">
+      <img src=<%= image[i] %> class="card-img" alt="">
+      <div class="container">
+        <h4 class="product-title"><%= title[i] %></h4>
+        <p class="para-desc"><%=description[i]%></p>
+        <p class="para-cost">$ <%= price[i] %></p>
+
+        <button type="button" name="button" class="cart-btn "><a href="/products/<%= id[i] %>" style="text-decoration: none;" class="para-desc cart-btn">ADD TO CART</a></button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<% } %>
+
+</div>
+
+
+<%- include("partials/footer"); -%>
